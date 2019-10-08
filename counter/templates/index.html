@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Counter</title>
+</head>
+
+<body style="text-align: center">
+
+    <h1 style="margin-top:50px;">Counter</h1>
+    <p>Visited: {{ session['count'] }} times</p>
+    <p>Value of counter: {{ session['adding_views'] }}</p>
+
+    <form action="{{ url_for('count') }}" method="post" style="margin:20px;">
+        <button type="submit" name="add" value="add" class="btn btn-outline-primary">2 more visits pls</button>
+        <button type="submit" name="reset" value="reset" class="btn btn-outline-danger">Reset</button>
+    </form>
+
+    <form action="{{ url_for('custom_count') }}" method="post">
+        <input type="text" name="num">
+        <button type="submit" name="add" value="add" class="btn btn-outline-primary">more visits pls</button>
+    </form>
+</body>
+
+</html>
